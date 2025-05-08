@@ -2,6 +2,7 @@
 
 import { ProjectRow } from '@/components/projects/ProjectRow';
 import { projects } from '@/data/projects';
+import Link from 'next/link';
 
 export default function ProjectsPage() {
   return (
@@ -21,10 +22,10 @@ export default function ProjectsPage() {
         </div>
         <div className="mt-16 text-center space-y-3">
           <p className="text-lg text-muted-foreground">
-            Interested in collaborating or have a project in mind?{' '}
-            <a href="/" className="text-blue-600 dark:text-blue-400 hover:underline">
-              Let's talk about it!
-            </a>
+            Interested in collaborating or have a project in mind?{" "}
+            <Link href="/contact" className="text-blue-600 dark:text-blue-400 hover:underline">
+              Let&apos;s talk about it!
+            </Link>
           </p>
           <div className="flex items-center justify-center gap-2">
             <div className="h-px w-12 bg-muted-foreground/30"></div>
@@ -35,4 +36,4 @@ export default function ProjectsPage() {
       </div>
     </main>
   );
-} 
+}

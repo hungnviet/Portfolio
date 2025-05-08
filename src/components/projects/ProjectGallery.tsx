@@ -8,7 +8,7 @@ interface ProjectGalleryProps {
   isMobile: boolean;
 }
 
-export function ProjectGallery({ images, isMobile }: ProjectGalleryProps) {
+export function ProjectGallery({ images }: ProjectGalleryProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextImage = () => {

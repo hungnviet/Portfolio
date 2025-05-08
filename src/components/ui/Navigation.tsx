@@ -1,8 +1,7 @@
 'use client';
-import { useState, useEffect } from 'react';
+
 import Link from 'next/link';
-import { MobileMenu } from './MobileMenu';
-import { ThemeToggle } from './ThemeToggle';
+
 
 const sections = [
   { name: 'Home', href: '/' },

@@ -6,31 +6,15 @@ import { VideoEmbed } from '@/components/projects/VideoEmbed';
 import { FeatureBlock } from '@/components/projects/FeatureBlock';
 import { TechBadge } from '@/components/ui/TechBadge';
 
-interface ProjectPageProps {
-  params: {
+interface PageProps {
+  params: Promise<{
     slug: string;
-  };
+  }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }
 
-export async function generateMetadata({ params }: ProjectPageProps) {
-  
-  const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug);
-  
-  if (!project) {
-    return {
-      title: 'Project Not Found',
-    };
-  }
-
-  return {
-    title: `${project.title} - Nguyen Viet Hung`,
-    description: project.shortDescription,
-  };
-}
-
-export default async function ProjectPage({ params }: ProjectPageProps) {
-  const { slug } = await params;
+export default async function ProjectPage({ params }: PageProps) {
+  const {slug} = await params;
   const project = projects.find((p) => p.slug === slug);
 
   if (!project) {
